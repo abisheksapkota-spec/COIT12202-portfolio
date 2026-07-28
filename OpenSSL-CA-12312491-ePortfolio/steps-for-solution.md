@@ -17,14 +17,14 @@ ip addr add 10.10.1.20/24 dev eth0
 ip addr add 10.10.1.30/24 dev eth0
 ```
 
-## CA — Start SSH
+## CA: Start SSH
 
 **CA**
 ```
 start-ssh.sh
 ```
 
-## CA — Root CA
+## CA: Root CA
 
 **CA**
 ```
@@ -39,7 +39,7 @@ openssl genpkey -algorithm RSA -pkeyopt rsa_keygen_bits:4096 -out /root/ca/priva
 openssl req -x509 -new -key /root/ca/private/root-ca.key -sha256 -days 3650 -config /etc/ssl/openssl.cnf -extensions v3_ca -out /root/ca/certs/root-ca.crt -subj "/C=AU/ST=QLD/O=CQUni/CN=Root CA"
 ```
 
-## CA — Intermediate CA
+## CA: Intermediate CA
 
 **CA**
 ```
@@ -55,7 +55,7 @@ openssl req -new -key /root/ca/intermediate/private/intermediate.key -out /root/
 openssl x509 -req -in /root/ca/intermediate/csr/intermediate.csr -CA /root/ca/certs/root-ca.crt -CAkey /root/ca/private/root-ca.key -CAcreateserial -out /root/ca/intermediate/certs/intermediate.crt -days 1825 -sha256 -extensions v3_ca -extfile /etc/ssl/openssl.cnf
 ```
 
-## Server — Start SSH, key, CSR
+## Server: Start SSH, key, CSR
 
 **Server**
 ```
@@ -74,7 +74,7 @@ openssl req -new -key /etc/ssl/private/server.key -out /tmp/server.csr -subj "/C
 printf 'subjectAltName=DNS:www.12312491.lab\nbasicConstraints=critical,CA:false\nkeyUsage=critical,digitalSignature,keyEncipherment\nextendedKeyUsage=serverAuth\n' > /tmp/server-ext.cnf
 ```
 
-## Server — Copy CSR and extension file to CA
+## Server: Copy CSR and extension file to CA
 
 **Server**
 ```
@@ -84,7 +84,7 @@ scp /tmp/server.csr root@10.10.1.10:/tmp/server.csr
 scp /tmp/server-ext.cnf root@10.10.1.10:/tmp/server-ext.cnf
 ```
 
-## CA — Sign server certificate
+## CA: Sign server certificate
 
 **CA**
 ```
@@ -97,7 +97,7 @@ openssl x509 -in /tmp/server.crt -noout -text | grep -A2 "Subject Alternative Na
 cat /root/ca/intermediate/certs/intermediate.crt /root/ca/certs/root-ca.crt > /tmp/ca-chain.crt
 ```
 
-## CA — Push server certificate and chain to Server
+## CA: Push server certificate and chain to Server
 
 **CA**
 ```
@@ -107,7 +107,7 @@ scp /tmp/server.crt root@10.10.1.20:/tmp/server.crt
 scp /tmp/ca-chain.crt root@10.10.1.20:/tmp/ca-chain.crt
 ```
 
-## Server — Build fullchain, configure Nginx
+## Server: Build fullchain, configure Nginx
 
 **Server**
 ```
@@ -136,7 +136,7 @@ nano /var/www/html/index.html
 nginx -t && (nginx -s reload || nginx)
 ```
 
-## Client — Hosts entry and pull certificates
+## Client: Hosts entry and pull certificates
 
 **Client**
 ```
@@ -152,7 +152,7 @@ scp root@10.10.1.10:/root/ca/intermediate/certs/intermediate.crt /tmp/intermedia
 scp root@10.10.1.20:/tmp/server.crt /tmp/server.crt
 ```
 
-## Client — Verify and test
+## Client: Verify and test
 
 **Client**
 ```
