@@ -73,3 +73,19 @@ What does an intermediate CA do? It allows the root CA key to remain offline and
 What does openssl verify do? It verifies the chain from the leaf certificate all the way up to the supplied intermediates and the trusted root, making sure all signatures and validity dates are correct and that every step obeys the given basic constraints. When there is no intermediate in the chain, the verification process fails because of a gap between the leaf and the trusted root.
 
 Why can't HTTP data be read in the capture? Initially, there is a TLS handshake, and the two parties establish the session key using their own certificates. As soon as the handshake is finished, the HTTP body data cannot be read because it is encrypted using the session key.
+
+# 6. Questions and Answers
+1. Purpose of the intermediate certificate authority
+<p> The intermediate certificate authority protects the root certificate authority's keys by keeping it offline while performing the routine signing operations. In case the intermediate is compromised, you will have to simply revoke it, but your root certificate authority would remain safe and secure. </p>
+
+2. What does openssl verify do
+<p>It verifies by traversing from the certificate to be validated up to the trusted root certificate au thority, making sure about the signature, expiry dates and the permissions. In case the intermediate certificate is not there, the connection between the certificate and the trusted root will not exist, and the validation will not take place. </p>
+
+3. Why captures do not show HTTP content
+<p> While the handshake is performed between the two parties, they should see it to set up the encryption process. Once the encryption is established, all the information is encrypted. Wireshark would see some data going but would not see its content. </p>
+
+4. Self-signed and CA-signed
+<p> Self-signed means the user is making the claim on his own. No trust from outside is involved; browsers give warnings accordingly. Good for non-production usage.
+CA-signed means a trusted authority vouches for you. Clients trust it automatically, no warnings. Needed for anything real users connect to. </p>
+
+
