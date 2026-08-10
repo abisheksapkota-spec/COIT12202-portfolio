@@ -67,4 +67,16 @@ Some advantages of GNS3 include:
 
 *Figure 2: GNS3-Intro-12312491-ipaddress.png*
 
+### Activities:
+
+<img width="1366" height="886" alt="image" src="https://github.com/user-attachments/assets/e747add4-8dfd-4354-86fa-afa1b53cebf8" />
+
+<img width="1384" height="754" alt="image" src="https://github.com/user-attachments/assets/a2471f25-f221-48c6-8f1f-ab4a1263e967" />
+
+<img width="1366" height="760" alt="image" src="https://github.com/user-attachments/assets/a5f19139-23da-44a5-89ed-bde5c0fbdabb" />
+
+<img width="1374" height="776" alt="image" src="https://github.com/user-attachments/assets/6f2eb469-a185-4e01-82d9-65d38b4a8ea5" />
+
+
+
 
