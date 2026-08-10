@@ -1,4 +1,4 @@
-# SSH Hardening — Keys, fail2ban and Tunnelling
+# SSH Hardening-Keys, fail2ban and Tunnelling
 
 **Project:** SSH-Hardening-12312491 | **Student:** Abishek Sapkota | **Student ID:** 12312491
 
