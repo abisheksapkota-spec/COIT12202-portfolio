@@ -42,13 +42,13 @@ The video walkthrough for this portfolio is submitted separately via Echo360, pe
 
 ## Activity evidence
 
-Evidence for the required Week 1–4 interactive activities is committed alongside each service:
+Evidence for the required Week 1 to 4 interactive activities is committed alongside each service:
 
-- Week 1 — [`Week1.md`](Week1.md)
-- Week 2 — [`Activities-Evidence.md`](OpenSSL-CA-12312491-ePortfolio/Activities-Evidence.md)
-- Week 3 — [`Activities-Evidence.md`](Password-Hashing-Lab-Solution/Activities-Evidence.md)
-- Week 4 — [`Activities-Evidence.md`](SSH-Hardening-12312491-ePortfolio/Activities-Evidence.md)
+- Week 1: [`Week1.md`](Week1.md)
+- Week 2: [`Activities-Evidence.md`](OpenSSL-CA-12312491-ePortfolio/Activities-Evidence.md)
+- Week 3: [`Activities-Evidence.md`](Password-Hashing-Lab-Solution/Activities-Evidence.md)
+- Week 4: [`Activities-Evidence.md`](SSH-Hardening-12312491-ePortfolio/Activities-Evidence.md)
 
 ## Student
 
-Abishek Sapkota — Student ID 12312491
+Abishek Sapkota | Student ID 12312491
