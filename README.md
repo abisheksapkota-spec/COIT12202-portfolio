@@ -4,6 +4,10 @@ Individual portfolio for Assessment 1 (COIT12202, Network Security Concepts): th
 
 The video walkthrough for this portfolio is submitted separately via Echo360, per the assessment instructions, and is not included in this repository.
 
+## Repository URL
+https://github.com/abisheksapkota-spec/COIT12202-portfolio
+
+
 ## Repository structure
 
 ```
