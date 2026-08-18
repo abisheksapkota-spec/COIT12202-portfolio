@@ -14,6 +14,7 @@ Broadly, the topics I'm working through include:
 - **PKI & HTTPS** — building a certificate authority, issuing certificates, setting up and verifying HTTPS, analysing TLS handshakes
 - **Password security** — comparing hashing algorithms (MD5, SHA-512, yescrypt), configuring password-quality and account-lockout policies, understanding cracking resistance
 - **SSH hardening** — key-based authentication, hardening `sshd_config`, blocking brute-force attempts with fail2ban, tunnelling through a bastion host
+- **Kerberos authentication** — ticket-based authentication, KDC/AS/TGS roles, mutual authentication over an untrusted network
 - **Firewalls & further topics** — to be added as the unit progresses
 
 ---
@@ -37,13 +38,16 @@ Broadly, the topics I'm working through include:
 │   ├── Password-Hashing-12312491.gns3project
 │   └── images/
 │
-└── SSH-Hardening-12312491-ePortfolio/    # SSH Hardening
-    ├── SSH-Hardening-12312491-Lab-Outputs.md
-    ├── Activities-Evidence.md
-    ├── SSH-Hardening-12312491.gns3project
-    ├── SSH-Hardening-12312491-admin.pcap
-    ├── SSH-Hardening-12312491-internal.pcap
-    └── images/
+├── SSH-Hardening-12312491-ePortfolio/    # SSH Hardening
+│   ├── SSH-Hardening-12312491-Lab-Outputs.md
+│   ├── Activities-Evidence.md
+│   ├── SSH-Hardening-12312491.gns3project
+│   ├── SSH-Hardening-12312491-admin.pcap
+│   ├── SSH-Hardening-12312491-internal.pcap
+│   └── images/
+│
+└── Auth-Kerberos-Week5/                  # Kerberos Authentication
+    └── (write-up, screenshots, GNS3 project)
 ```
 
 Each folder is self-contained: write-up, screenshots, and the GNS3 project file for that topic.
@@ -56,6 +60,7 @@ Each folder is self-contained: write-up, screenshots, and the GNS3 project file 
 - **Week 2:** [`Activities-Evidence.md`](./OpenSSL-CA-12312491-ePortfolio/Activities-Evidence.md) — PKI & HTTPS
 - **Week 3:** [`Activities-Evidence.md`](./Password-Hashing-Lab-Solution/Activities-Evidence.md) — Password security
 - **Week 4:** [`Activities-Evidence.md`](./SSH-Hardening-12312491-ePortfolio/Activities-Evidence.md) — SSH hardening
+- **Week 5:** [`Auth-Kerberos-Week5/`](./Auth-Kerberos-Week5/) — Kerberos authentication
 - *(more weeks to be added as the term progresses)*
 
 ---
